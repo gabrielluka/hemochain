@@ -1,0 +1,103 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Registro de Doação</h4>
+                    </div>
+                    <div class="card-content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Registro da Bolsa</label>
+                                        <input type="text" [(ngModel)]="registrodoacaoId" name="registrodoacaoId" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">CPF</label>
+                                        <input type="text" [(ngModel)]="cpf" name="cpf" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Código da Doação</label>
+                                        <input type="email" [(ngModel)]="codigodoacao" name="codigodoacao" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Hemocomponente</label>
+                                        <input type="text" [(ngModel)]="hemocomponente" name="hemocomponente" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">ABO</label>
+                                        <input type="text" [(ngModel)]="abo" name="abo" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">RH</label>
+                                        <input type="text" [(ngModel)]="rh" name="rh" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Volume</label>
+                                        <input type="text" [(ngModel)]="volume" name="volume" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label>Data de Doação</label>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label>Data de Fracionamento</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <input type="date"  name="datacoleta" [(ngModel)]="datacoleta" placeholder="28/03/2018" min="2000-01-01" max="2018-12-31"
+                                        required />
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <input type="date"  name="datafracionamento" [(ngModel)]="datafracionamento" placeholder="28/03/2018" min="2000-01-01" max="2018-12-31"
+                                        required />
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-danger pull-right" (click)="register()">Registrar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="">
+                            <img class="img" src={{qrcode}} />
+                        </a>
+                    </div>
+
+                    <div class="content">
+                        <h6 class="category text-gray">QrCode</h6>
+                        <h4 class="card-title">Bolsa de Sangue</h4>
+                        <a href="" class="btn btn-danger btn-round">Imprimir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

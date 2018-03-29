@@ -1,0 +1,36 @@
+/**
+ * Write your model definitions here
+ */
+
+namespace com.icotech.blockchain
+
+asset RegistroDoacao identified by registrodoacaoId {
+  o String registrodoacaoId
+  o String cpf
+  o String datacoleta
+  o String codigodoacao
+  o String abo
+  o String rh
+  o String hemocomponente
+  o String volume
+  o String datafracionamento
+}
+
+asset RegistroPaciente identified by registropacienteId {
+  o String registropacienteId
+  o String codigopaciente
+  o String hospital
+  o String nomepaciente
+  o String abo
+  o String rh
+  o String numerosus
+  o String datanascimento
+}
+
+transaction RegistroDoacaoTransaction{
+  --> RegistroDoacao asset
+}
+
+transaction RegistroPacienteTransaction{
+  --> RegistroPaciente asset  
+}
