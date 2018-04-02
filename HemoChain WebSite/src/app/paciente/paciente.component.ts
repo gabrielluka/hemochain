@@ -49,7 +49,7 @@ export class PacienteComponent implements OnInit {
       return Promise.resolve(data);
     }
     return new Promise(resolve => {
-    this.http.post('http://40.71.2.182:3000/api/RegistroPaciente', obj).map(res => res.json()).subscribe(data => {
+      this.http.post('http://40.71.2.182:3000/api/RegistroPaciente', obj).map(res => res.json()).subscribe(data => {
       resolve(data);
       }); 
     })
