@@ -52,19 +52,11 @@ export class AppComponent implements OnInit {
             ps = new PerfectScrollbar(elemSidebar);
         }
     }
+    
     ngAfterViewInit() {
         this.runOnRouteChange();
     }
-    isMaps(path){
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-        titlee = titlee.slice( 1 );
-        if(path == titlee){
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
+
     runOnRouteChange(): void {
       if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
         const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');

@@ -1,0 +1,102 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Registro de Paciente</h4>
+                    </div>
+                    <div class="card-content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">ID do Paciente</label>
+                                        <input type="text" [(ngModel)]="p.pacienteId" name="registropacienteId" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Número do SUS</label>
+                                        <input type="text" [(ngModel)]="p.numerosus" name="numerosus" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Código do Paciente</label>
+                                        <input type="email" [(ngModel)]="p.codigopaciente" name="codigopaciente" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Nome do Paciente</label>
+                                        <input type="text" [(ngModel)]="p.nomepaciente" name="nomepaciente" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Hospital</label>
+                                        <input type="text" [(ngModel)]="p.nomeInstituicao" name="hospital" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <label >Data de Nascimento</label>
+                            <br>
+                            <div class="row">
+                                    
+                                <div class="col-md-6">
+                                    <div  class="form-group form-black label-floating is-empty">
+                                            
+                                        <input type="date" name="datacoleta" [(ngModel)]="p.datanascimento" placeholder="28/03/2018" min="1920-01-01" max="2018-12-31"
+                                            required />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">RH (+ ou -) </label>
+                                        <input type="text" [(ngModel)]="p.rh" name="rh" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">ABO (A, B, AB e O)</label>
+                                        <input type="text" [(ngModel)]="p.abo" name="abo" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-danger pull-right" (click)="register()">Registrar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <div *ngIf="qrcode">
+                            <a href="">
+                                <img class="img" src={{qrcode}} />
+                            </a>
+                        </div>
+                        <div *ngIf="!qrcode">
+                            <a href="">
+                                <img class="img" src='../../assets/img/qrcode.png' />
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="content">
+                        <h6 class="category text-gray">QrCode</h6>
+                        <h4 class="card-title">Paciente</h4>
+                        <a href="" class="btn btn-danger btn-round">Imprimir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Registro de Doação</h4>
+                    </div>
+                    <div class="card-content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">ID da Doação</label>
+                                        <input type="text" [(ngModel)]="d.doacaoId" name="doacaoId" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Codigo Doação</label>
+                                        <input type="text" [(ngModel)]="d.codigodoacao" name="codigodoacao" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group col-sm-6">
+                                        <label>Data de Coleta</label>
+                                        <input type="date" name="datacoleta" [(ngModel)]="d.datacoleta" placeholder="28/03/2018" min="2000-01-01" max="2018-12-31"
+                                            required />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Nome da Instituição</label>
+                                        <input type="text" [(ngModel)]="d.nomeInstituicao" name="nomeInstituicao" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <button type="submit" class="btn btn-danger pull-right" (click)="register()">Registrar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <div *ngIf="qrcode">
+                            <a href="">
+                                <img class="img" src={{qrcode}} />
+                            </a>
+                        </div>
+                        <div *ngIf="!qrcode">
+                            <a href="">
+                                <img class="img" src='../../assets/img/qrcode.png' />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <h6 class="category text-gray">QrCode</h6>
+                        <h4 class="card-title">Bolsa de Sangue</h4>
+                        <a href="" class="btn btn-danger btn-round">Imprimir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
